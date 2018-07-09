@@ -166,7 +166,7 @@ function draw() {
   noFill();
   stroke(255, 0, 0);
   for (let border of borders) {
-    line(border[0], border[1], border[2], border[3]);
+  border.draw();
   }
   
   noFill();
