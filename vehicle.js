@@ -1,6 +1,6 @@
 function Vehicle(x, y, dna) {
-  this.acceleration = createVector(20, 20, 20, 20); // 加速
-  this.velocity = createVector(2, -2, 2, -2); // 速さ(向かう強さ)
+  this.acceleration = createVector(20, 20); // 加速
+  this.velocity = createVector(2, -2); // 速さ(向かう強さ)
   this.position = createVector(x, y); // スポーン場所
   this.r = 6; // vehicleの大きさ
   this.maxspeed = 4;
@@ -14,11 +14,11 @@ function Vehicle(x, y, dna) {
   // dna[]の初期値を設定
   if (dna === undefined) {
     // food weight - foodに向かうベクトル(steerG)強さ
-    this.dna[0] = 0.9;
+    this.dna[0] = 0.55;
     // poison weight - poisionに向かうベクトル(steerB)強さ
     this.dna[1] = -10;
     // food perception - foodが見える範囲(視界)
-    this.dna[2] = 400;
+    this.dna[2] = 350;
     // poison perception - poisonが見える範囲(視界)
     this.dna[3] = 100;
   } else {
@@ -108,7 +108,7 @@ function Vehicle(x, y, dna) {
 
       // d(distance)がmaxspeed以下(エラー回避のため)
       if (d < this.maxspeed) {
-        list.splice(i, 1); // food/poisonを消す(eatする)
+        //list.splice(i, 1); // food/poisonを消す(eatする)
         this.health += nutrition; // food/poison値がhealthの増減に影響
       } else {
         // 現アイテムのdistanceがrecord(現在記録されている最も近いアイテム)より小さくて
