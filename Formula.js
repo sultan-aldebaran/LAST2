@@ -108,7 +108,7 @@ class Point {
 	 * @param {Number} x
 	 * @param {Number} y
 	 */
-	constructor (x = vehicle.x, y = vehicle.y) {
+	constructor (x = vehicles[i].position.x, y = vehicles[i].position.y) {
 		this.x = x;
 		this.y = y;
 	}
